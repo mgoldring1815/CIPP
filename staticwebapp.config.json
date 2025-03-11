@@ -36,71 +36,122 @@
     },
     {
       "route": "/api/ExecSAMSetup",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/AddStandardTemplate",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/RemoveStandardTemplate",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/LogoutRedirect",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/404",
-      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"]
+      "allowedRoles": ["admin", "editor", "readonly", "authenticated", "anonymous"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/RemoveStandard",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/add*",
-      "allowedRoles": ["admin", "editor"]
+      "allowedRoles": ["admin", "editor"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/edit*",
-      "allowedRoles": ["admin", "editor"]
+      "allowedRoles": ["admin", "editor"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/ExecSendPush",
-      "allowedRoles": ["admin", "editor", "readonly"]
+      "allowedRoles": ["admin", "editor", "readonly"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/ExecExcludeTenant",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/Exec*",
-      "allowedRoles": ["admin", "editor"]
+      "allowedRoles": ["admin", "editor"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/Remove*",
-      "allowedRoles": ["admin", "editor"]
+      "allowedRoles": ["admin", "editor"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/cipp/*",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/tenant/standards/*",
-      "allowedRoles": ["admin"]
+      "allowedRoles": ["admin"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/",
-      "allowedRoles": ["admin", "editor", "readonly", "reader"]
+      "allowedRoles": ["admin", "editor", "readonly", "reader"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "/api/Public*",
-      "allowedRoles": ["admin", "editor", "readonly", "reader", "authenticated", "anonymous"]
+      "allowedRoles": ["admin", "editor", "readonly", "reader", "authenticated", "anonymous"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     },
     {
       "route": "*",
-      "allowedRoles": ["admin", "editor", "readonly", "reader"]
+      "allowedRoles": ["admin", "editor", "readonly", "reader"],
+      "headers": {
+        "Cache-Control": "no-store"
+      }
     }
   ],
   "navigationFallback": {
@@ -134,5 +185,17 @@
   },
   "mimeTypes": {
     ".json": "text/json"
+  },
+  "networking": {
+    "allowedIpRanges": ["AzureFrontDoor.Backend"]
+  },
+  "forwardingGateway": {
+    "requiredHeaders": {
+      "X-Azure-FDID": "cc02277f-9d64-4b99-8857-ef07e03c555c"
+    },
+    "allowedForwardedHosts": [
+      "my-sitename.azurefd.net"
+    ]
   }
 }
+

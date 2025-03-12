@@ -194,8 +194,8 @@
       "X-Azure-FDID": "cc02277f-9d64-4b99-8857-ef07e03c555c"
     },
     "allowedForwardedHosts": [
+      "CIPP-gwh4b5faaberhnbp.z03.azurefd.net",
       "cipp.priority.works"
     ]
   }
 }
-
